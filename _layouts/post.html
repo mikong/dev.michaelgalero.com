@@ -7,3 +7,5 @@ layout: default
   <span class="posted">Posted by <strong>mikong</strong> on {{ page.date | date: '%B' }} {{ page.date | date: '%e' }}, {{ page.date | date: '%Y' }}</span>
   {{ content }}
 </article>
+
+{% include comments.html %}
