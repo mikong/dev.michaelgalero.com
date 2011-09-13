@@ -6,9 +6,7 @@ layout: default
 <article>
   <h2><a href="{{ post.url }}" rel="bookmark" title="Permanent link to ">{{ post.title }}</a></h2>
   <span class="posted">Posted by <strong>mikong</strong> on {{ post.date | date: '%B' }} {{ post.date | date: '%e' }}, {{ post.date | date: '%Y' }}</span>
-  <p>
-    {{ post.content }}
-  </p>
+  {{ post.content }}
 </article>
 {% endfor %}
 
