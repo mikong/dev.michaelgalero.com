@@ -67,18 +67,11 @@ dump:
 
 ## Manual Fixing
  * Posts
- * Links
-   * http://roytang.net - Roy Tang
-   * http://krna82.wordpress.com - buried in cliches
-   * http://thirdworldwriter.com - Third World Writer
-   * http://timmedina.com - Code Kuno
-   * http://www.igvita.com - Igvita
  * About page
  * Files
    * confreaks-rubyconf-2007.jpg
    * `scp hikaru:/usr/local/wordpress-mu-1.3/wp-content/blogs.dir/2/files/2007/12/*.jpg .`
    * upload to skitch
- * Layout
  * Stylesheets
 
 ## Deploy
