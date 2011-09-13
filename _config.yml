@@ -1,5 +1,6 @@
 auto: false
 server: false
+baseurl: /blog
 lsi: false
 markdown: rdiscount
 pygments: true
