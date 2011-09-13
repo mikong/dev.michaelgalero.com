@@ -4,7 +4,7 @@ lsi: false
 markdown: rdiscount
 pygments: true
 permalink: /:year/:month/:day/:title
-paginate: 10
+paginate: 5
 category_dir: topics
 category_title_prefix:
 exclude: ["notes.md", "lib", "blog.rb", "deploy.rb", "config", "log", "Rakefile", "tmp"]

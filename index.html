@@ -2,13 +2,30 @@
 layout: default
 ---
 
-<h1>Latest entries</h1>
-{% for post in site.posts limit: 10 %}
-<h2>
-  <a href="{{ post.url }}" rel="bookmark" title="Permanent link to ">{{ post.title }}</a>
-</h2>
-<span>{{ post.date | date: '%B' }} {{ post.date | date: '%e' }}, {{ post.date | date: '%Y' }}</span>
-<p>
-  {{ post.excerpt }}
-</p>
+{% for post in paginator.posts %}
+<article>
+  <h2><a href="{{ post.url }}" rel="bookmark" title="Permanent link to ">{{ post.title }}</a></h2>
+  <span>{{ post.date | date: '%B' }} {{ post.date | date: '%e' }}, {{ post.date | date: '%Y' }}</span>
+  <p>
+    {{ post.content }}
+  </p>
+</article>
 {% endfor %}
+
+<nav>
+  {% if paginator.previous_page %}
+    <div class="left">
+      {% if paginator.previous_page == 1 %}
+      <a href="/">&laquo;Previous Entries</a>
+      {% else %}
+      <a href="/page{{ paginator.previous_page }}">&laquo;Previous Entries</a>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {% if paginator.next_page %}
+    <div class="right">
+      <a href="/page{{ paginator.next_page }}">Next Entries &raquo;</a>
+    </div>
+  {% endif %}
+</nav>
