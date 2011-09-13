@@ -97,6 +97,10 @@ article h2 a:active {
   background: transparent;
 }
 
+article {
+  margin-bottom: 3em;
+}
+
 .posted {
   color: #787777;
   margin-left: 2px;
