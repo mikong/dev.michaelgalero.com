@@ -66,6 +66,29 @@ header h1 {
   margin: 0;
 }
 
+/*=== Article ===*/
+article h2 {
+  font: bold 30px "Droid Sans", sans-serif;
+  margin: 0;
+}
+
+article h2 a:link,
+article h2 a:visited {
+  color: #bf3211;
+  text-decoration: none;
+}
+
+article h2 a:hover,
+article h2 a:active {
+  color: #1b1b1b;
+  background: transparent;
+}
+
+.posted {
+  color: #787777;
+  margin-left: 2px;
+}
+
 /*=== Styles ===*/
 
 body {
