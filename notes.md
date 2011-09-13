@@ -66,9 +66,10 @@ dump:
  * Determine category\_dir and category\_title\_prefix
 
 ## Manual Fixing
- * Posts
- * About page
- * Files
+ * Posts - ok
+ * About - ok
+ * Archives - ok
+ * Files - ok
    * confreaks-rubyconf-2007.jpg
    * `scp hikaru:/usr/local/wordpress-mu-1.3/wp-content/blogs.dir/2/files/2007/12/*.jpg .`
    * upload to skitch

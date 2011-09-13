@@ -106,6 +106,15 @@ article {
   margin-left: 2px;
 }
 
+/*=== Archives ===*/
+#archives {
+  font: normal 14px "Droid Sans Mono", "lucida console", "courier new", courier, serif;
+}
+
+#archives li {
+  list-style-type: none;
+}
+
 /*=== Styles ===*/
 
 body {
