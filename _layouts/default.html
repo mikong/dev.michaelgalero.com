@@ -4,18 +4,22 @@
 <head>
   <title>michael galero</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="/css/main.css" type="text/css" media="all" />
 </head>
 <body>
-  <header>
-    <h1><a href="http://michaelgalero.com/blog">michael galero</a></h1>
-    <h2>a_software_developer\'s_blog</h2>
-  </header>
-  <div id="page">
-    {{ content }}
+  <div id="container">
+    <header>
+      <h1><a href="http://michaelgalero.com/blog">michael galero</a></h1>
+      <h2>a_software_developer\'s_blog</h2>
+    </header>
+    <div id="main_column">
+      {{ content }}
+    </div>
+    <div id="sidebar">
+      {% include sidebar.html %}
+    </div>
+    <footer>
+    </footer>
   </div>
-  <div id="sidebar">
-  </div>
-  <footer>
-  </footer>
 </body>
 </html>

@@ -1,0 +1,41 @@
+body {
+  min-width: 960px;
+}
+
+#container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+}
+
+header,
+#sidebar,
+#main_column {
+  display: inline;
+  float: left;
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+header {
+  width: 780px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+#main_column {
+  width: 540px;
+  padding-left: 80px;
+}
+
+#sidebar {
+  width: 220px;
+  padding-right: 80px;
+}
+
+footer {
+  width: 780px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
