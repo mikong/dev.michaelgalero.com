@@ -4,7 +4,7 @@ layout: default
 
 {% for post in paginator.posts %}
 <article>
-  <h2><a href="/blog{{ post.url }}" rel="bookmark" title="Permanent link to ">{{ post.title }}</a></h2>
+  <h2><a href="{{ post.url }}" rel="bookmark" title="Permanent link to ">{{ post.title }}</a></h2>
   <span class="posted">Posted by <strong>mikong</strong> on {{ post.date | date: '%B' }} {{ post.date | date: '%e' }}, {{ post.date | date: '%Y' }}</span>
   {{ post.content }}
 </article>
@@ -14,16 +14,16 @@ layout: default
   {% if paginator.previous_page %}
     <div class="left">
       {% if paginator.previous_page == 1 %}
-      <a href="/blog/">&laquo; Previous Entries</a>
+      <a href="/">&laquo; Previous Entries</a>
       {% else %}
-      <a href="/blog/page{{ paginator.previous_page }}">&laquo; Previous Entries</a>
+      <a href="/page{{ paginator.previous_page }}">&laquo; Previous Entries</a>
       {% endif %}
     </div>
   {% endif %}
 
   {% if paginator.next_page %}
     <div class="right">
-      <a href="/blog/page{{ paginator.next_page }}">Next Entries &raquo;</a>
+      <a href="/page{{ paginator.next_page }}">Next Entries &raquo;</a>
     </div>
   {% endif %}
 </nav>
