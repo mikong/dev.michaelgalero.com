@@ -1,3 +1,1 @@
-require 'rack/jekyll'
-
-run Rack::Jekyll.new
+run Rack::Directory.new("_site")
