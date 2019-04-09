@@ -1,0 +1,121 @@
+[[comments]]
+date = 2008-12-16T11:39:13Z
+name = "Uri"
+message = """
+Thanks, these is very useful for me.
+BTW, should this work in slices too? Can't see my custom tasks."""
+
+[[comments]]
+date = 2008-12-16T18:31:49Z
+name = "mikong"
+message = """
+@Uri: You might want to check out these pages in the merbivore wiki:
+
+http://wiki.merbivore.com/howto/slice
+
+There's a part there in 'Create table from model' section where he noted that the slice didn't have access to rake db:automigrate, and so he piped the 'Datamapper.automigrate!' command to the slice.
+
+http://wiki.merbivore.com/howto/slice/rake_tasks
+
+In this page, it's shown that you need to add the dependencies in the Rakefile of your slice."""
+
+[[comments]]
+date = 2008-12-16T20:27:02Z
+name = "Uri"
+message = """
+Thanks!"""
+
+[[comments]]
+date = 2009-03-01T20:15:06Z
+name = "Philippe Rathé"
+message = """
+Can you tell me what your script expect as yaml syntax?
+I get the following error:
+rake aborted!
+undefined method `keys` for ["reason1", {"name"=>"My own reason"}]:Array
+
+With this yaml:
+reason1:
+name: My own reason
+
+Thanks"""
+
+[[comments]]
+date = 2009-03-02T16:36:59Z
+name = "mikong"
+message = """
+Hi Philippe,
+
+I suggest you try dumping some data so you can see the yaml expected. Here's an example data dump on my side:
+
+
+---
+- :word: burger
+:id: 1
+- :word: food
+:id: 2"""
+
+[[comments]]
+date = 2009-03-22T23:00:34Z
+name = "jc"
+message = """
+Hrmmm.. the load task doesn't work. It croaks on the created_at and updated_at columns. \"Invalid time\"
+
+Seems like YAML is a very odd choice for this. Why not just use sql in and sql out? The data format conversions make things very unstable."""
+
+[[comments]]
+date = 2009-03-23T02:06:39Z
+name = "mikong"
+message = """
+I have created_at and updated_at in several places in the project that I used this. I didn't have any problems. Can you give more details about your environment? The Merb version and DM version you're using, what your database is, and maybe how your updated_at/created_at data looks like in your YAML file?
+
+I like YAML because it has a nice format, and it's quite easy to modify the data before loading it. I guess if I had your errors and couldn't make YAML work, then I'd consider other solutions. Btw, it's not exactly my solution. As mentioned above, I just translated Tobi's work which I think is amazing coz it was an old article, and yet it just worked for my case.
+
+Anyway, I hope you could give me the details of your environment so I can take a look at the problem."""
+
+[[comments]]
+date = 2009-04-05T08:50:59Z
+name = "jc"
+message = """
+Looks like its a YAML bug. Tracked here:
+http://redmine.ruby-lang.org/issues/show/752
+
+It fails just loading the generated YAML file.
+irb(main):014:0> YAML.load_file "config/data/development/Job.yml"
+ArgumentError: time out of range
+from /opt/local/lib/ruby/1.8/yaml.rb:133:in `utc`
+from /opt/local/lib/ruby/1.8/yaml.rb:133:in `node_import`
+from /opt/local/lib/ruby/1.8/yaml.rb:133:in `load`
+from /opt/local/lib/ruby/1.8/yaml.rb:133:in `load`
+from /opt/local/lib/ruby/1.8/yaml.rb:144:in `load_file`"""
+
+[[comments]]
+date = 2009-04-05T08:51:41Z
+name = "jc"
+message = """
+Here's what the timestamps look like in the YML file
+
+:created_at: 2009-03-31T00:04:45-07:00
+:updated_at: 2009-03-31T00:04:45-07:00"""
+
+[[comments]]
+date = 2009-07-10T16:36:30Z
+name = "Brian Stolz"
+message = """
+I was having issues with join tables which have names such as "roles_users" because of the double pluralization.
+
+To resolve this I changed:
+
+INSERT INTO #{table.name.pluralize.snake_case}
+
+to:
+
+INSERT INTO #{table.storage_name}
+
+This uses the proper table name instead."""
+
+[[comments]]
+date = 2009-09-27T09:30:07Z
+name = "jc"
+message = """
+This no longer works in datamapper 0.10. quote_column_name no longer exists on adapter. Supposedly its in the connection now, but I cant find it"""
