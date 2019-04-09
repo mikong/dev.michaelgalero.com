@@ -1,0 +1,40 @@
+[[comments]]
+date = 2007-12-26T12:41:03Z
+name = "topher"
+link = "http://topher.88-mph.net/"
+message = """
+Does Rails 2.0 run on Ruby 1.9? What is the main improvement in 1.9? Is it performance?"""
+
+[[comments]]
+date = 2007-12-26T14:10:47Z
+name = "mikong"
+message = """
+There are recent updates in edge Rails to make the framework compatible to Ruby 1.9, so it looks like they are working on it. But note that Ruby 1.9 is a development release, so we can't expect it to be stable. Also, we need to wait for web servers like Mongrel to support Ruby 1.9."""
+
+[[comments]]
+date = 2007-12-26T14:32:18Z
+name = "mikong"
+message = """
+As for improvements in 1.9, I think YARV (the new Ruby interpreter) is the most talked about. It's expected to deliver a big performance boost. Another feature is for multi-threading, fibers.
+
+There are also a lot of small changes, like the new hash syntax and some of the deprecated methods in 1.8 were completely removed, like Object#type."""
+
+[[comments]]
+date = 2007-12-26T22:29:38Z
+name = "Geoff"
+message = """
+Seems to work fine on Leopard. Thanks for the instructions."""
+
+[[comments]]
+date = 2007-12-26T22:42:02Z
+name = "Alex Egg"
+link = "http://alexegg.com/"
+message = """
+Don't forget about Fixnum:odd? !!"""
+
+[[comments]]
+date = 2008-03-21T18:22:54Z
+name = "roger"
+link = "http://myfavoritepal.com/"
+message = """
+Wow that is indeed gorgeous. I would imagine that mongrel and such work fine on 1.9 (at least eventmachine does... but not sure)."""
