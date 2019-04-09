@@ -1,0 +1,25 @@
+[[comments]]
+date = 2008-01-01T03:34:24Z
+name = "Roy"
+link = "http://roytang.net/"
+message = """
+The question I'm curious about now is: how do you find these changes to your work methodology? i.e. Do you think Scrum is a lot better than what we were doing before? RoR a lot better than j2ee? (I'm not asking for a debate, just your opinion :p)"""
+
+[[comments]]
+date = 2008-01-01T03:42:02Z
+name = "topher"
+link = "http://topher.88-mph.net/"
+message = """
+Those are a lot of changes!
+
+They are all good changes and most web developers should know those things."""
+
+[[comments]]
+date = 2008-01-01T16:32:42Z
+name = "mikong"
+message = """
+@Roy:
+
+I don't think Scrum is really applicable to what we were doing before because our clients need to agree to use Scrum and I'm not sure if that's an option (maybe parts of Scrum can be used). But I find it much more productive than before. Our demo projects actually resemble a lot like Scrum: small team of good people, daily updates, short time frame and very adaptive to change.
+
+I won't compare RoR and J2EE in this comment; that would require an article to give justice to both sides. All I can say is that for most of my projects, it makes sense to use RoR over J2EE. We can discuss the details some time."""
