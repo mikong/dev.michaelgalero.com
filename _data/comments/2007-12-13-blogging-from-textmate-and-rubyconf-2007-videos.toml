@@ -1,0 +1,16 @@
+[[comments]]
+date = 2007-12-18T11:11:54Z
+name = "Patrick"
+link = "http://www.schreiblogade.de/"
+message = """
+You can still use markdown to write your post and convert it to plain HTML or XHTML:
+
+Bundles -> Mardown -> Convert Document to HTML
+
+Greetings"""
+
+[[comments]]
+date = 2007-12-18T15:28:30Z
+name = "mikong"
+message = """
+@Patrick: I'll do just that. Thanks!"""
