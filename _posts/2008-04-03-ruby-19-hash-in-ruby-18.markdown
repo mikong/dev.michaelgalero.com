@@ -35,19 +35,19 @@ We have an alternative hash syntax in Ruby 1.9:
 
 A nice addition in Ruby 1.9 is that the order in which you added the items to a hash is remembered and will be used when the hash is iterated.
 
-There's also a new class method try_convert where if you call
+There's also a new class method `try_convert` where if you call
 
 <pre>
   Hash.try_convert(myobject)
 </pre>
 
-myobject's to_hash method will be called to return a hash. If there's no to_hash, nil will be returned.
+myobject's `to_hash` method will be called to return a hash. If there's no `to_hash`, `nil` will be returned.
 
-And then we have these new instance methods (a few were simply borrowed from the Array class): assoc, compare_by_identity, compare_by_identity?, flatten, key and rassoc.
+And then we have these new instance methods (a few were simply borrowed from the Array class): `assoc`, `compare_by_identity`, `compare_by_identity?`, `flatten`, `key` and `rassoc`.
 
 ### Trying Metaprogramming
 
-Let's first try to implement the try_convert class method. Luckily, [Chris Wanstrath's try() article](http://ozmm.org/posts/try.html) gave us something we could use:
+Let's first try to implement the `try_convert` class method. Luckily, [Chris Wanstrath's try() article](http://ozmm.org/posts/try.html) gave us something we could use:
 
 <pre>
 class Object
@@ -71,9 +71,9 @@ class Hash
 end
 </pre>
 
-Looking at that, I'm starting to think Ruby 1.9 should have included the try() method instead of providing try_convert(). But that's beside the point of this exercise.
+Looking at that, I'm starting to think Ruby 1.9 should have included the `try()` method instead of providing `try_convert()`. But that's beside the point of this exercise.
 
-Let's try the simple instance method flatten. The documentation said it converts the hash to an array, then invokes Array#flatten! on the result. So it seems to be simply this:
+Let's try the simple instance method `flatten`. The documentation said it converts the hash to an array, then invokes `Array#flatten!` on the result. So it seems to be simply this:
 
 <pre>
 class Hash
@@ -93,6 +93,6 @@ h.flatten(1) # =&gt; [:feline, ["felix", "tom"], :equine, "ed"]
 h.flatten(2) # =&gt; [:feline, "felix", "tom", :equine, "ed"]
 </pre>
 
-It turns out that the flatten and flatten! methods in Ruby 1.9 Array has also changed with a new level parameter. The default value of -1 makes it behave like the original (i.e. it recursively flattens the array). A level value of 0 performs no flattening and a level greater than zero flattens only to that depth (like the depth parameter in the Hash#flatten example above).
+It turns out that the `flatten` and `flatten!` methods in Ruby 1.9 Array has also changed with a new level parameter. The default value of -1 makes it behave like the original (i.e. it recursively flattens the array). A level value of 0 performs no flattening and a level greater than zero flattens only to that depth (like the depth parameter in the `Hash#flatten` example above).
 
-The flatten method we implemented above works fine. If you want the depth parameter, I've added it by first redefining the flatten method in Array, and then just calling that from the flatten method in Hash. You could head over to my [GitHub repository](http://github.com/mikong/point2) to see the code. The simple project also implements some Ruby 1.9 Time class methods (sunday?, monday?, etc) using the method_missing trick. And I'll continue to play around with Ruby 1.9 and metaprogramming so you could expect more Ruby 1.9 features in Ruby 1.8. The idea is not to port Ruby 1.9 to Ruby 1.8 (that would be crazy!), but to try stuff so some weird things may also crop up.
+The `flatten` method we implemented above works fine. If you want the depth parameter, I've added it by first redefining the `flatten` method in Array, and then just calling that from the `flatten` method in Hash. You could head over to my [GitHub repository](http://github.com/mikong/point2) to see the code. The simple project also implements some Ruby 1.9 Time class methods (`sunday?`, `monday?`, etc) using the `method_missing` trick. And I'll continue to play around with Ruby 1.9 and metaprogramming so you could expect more Ruby 1.9 features in Ruby 1.8. The idea is not to port Ruby 1.9 to Ruby 1.8 (that would be crazy!), but to try stuff so some weird things may also crop up.
