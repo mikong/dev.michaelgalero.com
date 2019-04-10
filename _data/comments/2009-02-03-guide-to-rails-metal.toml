@@ -1,0 +1,73 @@
+[[comments]]
+date = 2009-02-04T21:25:27Z
+name = "Michael"
+message = """
+Thanks so much. I have been looking for a way to use params and session for a few days."""
+
+[[comments]]
+date = 2009-02-05T01:43:31Z
+name = "Diego"
+link = "http://www.diegorv.com/"
+message = """
+Hello,
+
+I'm trying this:
+
+class Poller
+  def self.call(env)
+    if env["PATH_INFO"] =~ /^\\/poller/
+      @posts = Post.find(1, :select => "title")
+      [200, {"Content-Type" => "text/html"}, @posts.title]
+    else
+      [404, {"Content-Type" => "text/html"}, ["Not Found"]]
+    end
+  end
+end
+
+and the performace is very sux...
+
+what's the problem?"""
+
+[[comments]]
+date = 2009-02-05T02:58:12Z
+name = "mikong"
+message = """
+@Michael: You're welcome.
+
+@Diego:
+
+Can you provide any numbers on that so we get an idea how much it sucks? So you compared this to a non-Metal controller doing about the same thing and that was faster (Metal version is slower)?
+
+Also, make sure you are in production mode when testing for performance. If you're already in production mode, I can only guess that the DB call is slow. Performance of queries to DB can change, so you might want to get more samples for your benchmark, or mock the Post and stub the find method so that line won't touch the DB (only for your perf test of course)."""
+
+# trackback
+[[comments]]
+date = 2009-02-09T11:57:57Z
+name = "Double Shot #387 « A Fresh Cup"
+link = "http://afreshcup.com/2009/02/09/double-shot-387/"
+message = """
+[...] Guide to Rails Metal - Someone has actually been messing around with this enough to write about it. [...]"""
+
+[[comments]]
+date = 2009-02-09T12:40:14Z
+name = "DHH"
+message = """
+If you're fetching Active Records and rendering templates and partials, you've probably ventured outside the area where metal is going to give you a worthwhile boost. Have you benchmarked this vs a simple Action Controller? I doubt you're going to see a big difference.
+
+I'd reserve Metal use to something even simpler. Like outputting prerendered text from a memcached server after doing a simple check for permissions (not going through Active Record)."""
+
+[[comments]]
+date = 2009-02-09T14:55:03Z
+name = "mikong"
+message = """
+@DHH: Yeah, you're right. I learned that the hard way. I had to scrap my metal approach for the partials, but thought I might as well post the things I've learned about accessing request params, sessions, etc."""
+
+# trackback
+[[comments]]
+date = 2009-02-10T05:00:58Z
+name = "Rails Metal. A guide. - w3b.ch"
+link = "http://w3b.ch/2009/02/10/rails-metal-a-guide/"
+message = """
+[...] Michael Galero posted a helpful guide to understand how to write such an app. This entry was written by admin, posted on February 10, 2009[...]"""
+
+# not all trackbacks were copied
