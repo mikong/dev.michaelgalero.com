@@ -73,6 +73,9 @@ dump:
    * confreaks-rubyconf-2007.jpg
    * `scp hikaru:/usr/local/wordpress-mu-1.3/wp-content/blogs.dir/2/files/2007/12/*.jpg .`
    * upload to skitch
+   * Update (2019-04): skitch is down, stored image in /assets
  * Stylesheets
+ * Comments - ok
+   * stored in \_data/comments/ as per-post TOML files
 
 ## Deploy
