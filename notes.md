@@ -7,6 +7,7 @@
  * create database mikongblog\_wpmu;
  * grant ALL on mikongblog\_wpmu.* to wpadmin;
  * Wordpress dir: /usr/local/wordpress-mu-1.3/
+ * Update (2019-04-10): Server deleted
 
 ## Disqus
  * Signup - ok
